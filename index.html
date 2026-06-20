@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -26,7 +26,7 @@
     <title>Portafolio de servicios</title>
 
     <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,600;0,14..32,700;1,14..32,400&display=swap"
         rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
@@ -36,29 +36,13 @@
     <!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">
 
-    <style>
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            filter: invert(100%);
-        }
-
-        .carousel-control-prev[aria-disabled="true"],
-        .carousel-control-next[aria-disabled="true"] {
-            display: none;
-
-        }
-
-        .carousel-indicators button {
-            background-color: gray;
-            border-color: gray;
-        }
-
-
-        .carousel-indicators .active {
-            background-color: gray;
-
-        }
-    </style>
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
+        })();
+    </script>
 
 </head>
 
@@ -68,11 +52,12 @@
     <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
         <div class="container">
 
-            <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>
+            <a class="navbar-brand logo-text" href="index.html">Portafolio</a>
 
-            <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button type="button" class="theme-toggle theme-toggle-mobile" aria-label="Cambiar tema" title="Cambiar tema">
+                <span class="fas fa-moon theme-icon-dark" aria-hidden="true"></span>
+                <span class="fas fa-sun theme-icon-light" aria-hidden="true"></span>
+            </button>
 
             <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse"
                 aria-label="Toggle navigation">
@@ -88,7 +73,7 @@
                         <a class="nav-link" href="#services">Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experiencias</a>
+                        <a class="nav-link" href="#portfolio">Portafolio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#studies">Estudios</a>
@@ -98,6 +83,10 @@
                     </li>
                    
                 </ul>
+                <button type="button" class="theme-toggle theme-toggle-desktop" aria-label="Cambiar tema" title="Cambiar tema">
+                    <span class="fas fa-moon theme-icon-dark" aria-hidden="true"></span>
+                    <span class="fas fa-sun theme-icon-light" aria-hidden="true"></span>
+                </button>
                 <span class="nav-item">
                     <a class="btn-solid-sm" href="#contact">Contáctame</a>
                 </span>
@@ -114,17 +103,14 @@
                 <div class="col-lg-6 col-xl-5">
                     <div class="text-container">
                         <h1 class="h1-large">Ing. Estiven Betancur Palacio</h1>
-                        <p class="p-large">Profesional dedicado y creativo, especializado en
-                            desarrollo front-end y back-end con más de cuatro años de
-                            experiencia en proyectos empresariales. Excelentes
-                            habilidades de comunicación. Experiencia sólida en
-                            gestión de proyectos y relaciones con clientes.</p>
+                        <p class="p-large">Desarrollador Frontend Senior con +5 años de experiencia en aplicaciones web y móviles de alto rendimiento. Experto en Flutter, Angular, Ionic y TypeScript. Especializado en arquitecturas escalables, UX/UI y metodologías ágiles, con enfoque en código limpio y liderazgo técnico en equipos multidisciplinarios.</p>
 
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6 col-xl-7">
                     <div class="image-container">
-                        <img class="img-fluid" src="images/header-image.png" alt="alternative">
+                        <img class="img-fluid header-photo header-photo-light" src="images/header-image.png" alt="Retrato de Estiven Betancur">
+                        <img class="img-fluid header-photo header-photo-dark" src="images/header-image-dark.png" alt="Retrato de Estiven Betancur">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -134,345 +120,52 @@
 
 
     <!-- Services -->
-    <div id="services" class="cards-1 bg-gray">
+    <section id="services" class="services-section bg-gray">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Servicios</h2>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-icon">
-                            <span class="fas fa-mobile-alt"></span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Aplicaciones híbridas</h5>
-                            <p>Desarrollo de aplicaciones híbridas para Android e iOS haciendo uso de tecnologías como Flutter y Xamarin Forms, aplicando sofisticadas arquitecturas de desarrollo y estándares de diseño para brindar una experiencia satisfactoria y moderna al cliente final.</p>
-                    
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-icon red">
-                            <span class="fas fa-database"></span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Servicios RESTful</h5>
-                            <p>Creación de servicios RESTful personalizados para satisfacer las necesidades únicas empresariales, haciendo uso de tecnologías como .NET, NodeJS, Django, Spring Boot. Desde el diseño de la API hasta la implementación y la documentación, creando servicios RESTful eficientes, seguros y fáciles de usar para los clientes y desarrolladores.</p>
-                        
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-icon green">
-                            <span class="fas fa-laptop"></span>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Aplicaciones Web</h5>
-                            <p>Servicios de desarrollo web utilizando tecnologías líderes como .NET Framework, Django, JavaScript, JSP. Creando aplicaciones personalizadas, seguras y de alto rendimiento que satisfacen las necesidades específicas de tu negocio.</p>
-                           
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of cards-1 -->
+            <div class="section-header text-center">
+                <div class="section-title">Lo que ofrezco</div>
+                <h2>Servicios</h2>
+                <p class="section-subtitle">Desarrollo frontend especializado en aplicaciones web, móviles y arquitecturas escalables con enfoque en experiencia de usuario.</p>
+            </div>
+            <div class="row g-4" id="servicesGrid"></div>
+        </div>
+    </section>
     <!-- end of services -->
 
-    
-
-    <div id="experience" class="cards-3 bg-gray ">
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Experiencias en desarrollo móvil</h2>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
+            <div class="section-header text-center">
+                <div class="section-title">Proyectos realizados</div>
+                <h2>Portafolio</h2>
+                <p class="section-subtitle">Experiencia en desarrollo móvil y web para empresas de LATAM y el Caribe.</p>
+            </div>
 
+            <div class="portfolio-filters">
+                <button type="button" class="portfolio-filter-btn active" data-filter="all">Todos</button>
+                <button type="button" class="portfolio-filter-btn" data-filter="mobile">Desarrollo móvil</button>
+                <button type="button" class="portfolio-filter-btn" data-filter="web">Desarrollo web</button>
+            </div>
+
+            <div class="portfolio-nav" id="portfolioNav"></div>
+
+            <div class="portfolio-detail-card" id="portfolioDetail"></div>
         </div>
-    </div>
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
-                aria-label="Slide 5"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div id="details" class="basic-1">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 col-xl-7">
-                                <div class="image-container">
-                                    <img class="img-fluid" src="images/controlmoney.png" alt="alternative">
-                                </div> <!-- end of image-container -->
-                            </div> <!-- end of col -->
-                            <div class="col-lg-6 col-xl-5">
-                                <div class="text-container">
-                                    <div class="section-title">ControlMoney</div>
-                                    <h2>Aplicación para envío de dinero</h2>
-                                    <p>ControlMoney es una aplicación móvil para el envío de dinero a diferentes países de LATAM y el mundo, fue desarrollado para la empresa ControlBox Corp. La cual brinda sus servicios a diferentes empresas al rededor del mundo. Participé en la definición e implementación de la arquitectura, diseño y desarrollo de gran parte del flujo de la aplicación. </p>
-                                </div> <!-- end of text-container -->
-                            </div> <!-- end of col -->
-                        </div> <!-- end of row -->
-                    </div> <!-- end of container -->
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div id="details" class="basic-1">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 col-xl-7">
-                                <div class="image-container">
-                                    <img class="img-fluid" src="images/fecurity.png" alt="alternative">
-                                </div> <!-- end of image-container -->
-                            </div> <!-- end of col -->
-                            <div class="col-lg-6 col-xl-5">
-                                <div class="text-container">
-                                    <div class="section-title">Fecurity</div>
-                                    <h2>Aplicación para la realización de tareas de mantenimiento</h2>
-                                    <p>Fecurity es una aplicación móvil para la realización de tareas de mantenimiento en parques y centros de entretenimiento familiar. Fue desarrollada para la empresa 
-                                        Innodrive S.A.S y actualmente es usada por más de 50 parques y centros de entretenimiento en Colombia, Perú y Panamá. Participé en el desarrollo de módulos y diseño de la aplicación.
-                                    </p>
-                                </div> <!-- end of text-container -->
-                            </div> <!-- end of col -->
-                        </div> <!-- end of row -->
-                    </div> <!-- end of container -->
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div id="details" class="basic-1">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 col-xl-7">
-                                <div class="image-container">
-                                    <img class="img-fluid" src="images/voltcash.png" alt="alternative">
-                                </div> <!-- end of image-container -->
-                            </div> <!-- end of col -->
-                            <div class="col-lg-6 col-xl-5">
-                                <div class="text-container">
-                                    <div class="section-title">Amigo Paisano</div>
-                                    <h2>Aplicación para el envío de dinero</h2>
-                                    <p>Aplicación para el envío de dinero a diferentes países de Latinoamérica. Desarrollado para la empresa ControlBox Corp. La cual aún se encuentra en fase de desarrollo.
-                                        Participé en la creación de módulos y en la creación y ajustes de servicios Rest para la aplicación.</p>
-                                </div> <!-- end of text-container -->
-                            </div> <!-- end of col -->
-                        </div> <!-- end of row -->
-                    </div> <!-- end of container -->
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div id="details" class="basic-1">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 col-xl-7">
-                                <div class="image-container">
-                                    <img class="img-fluid" src="images/netvoz.png" alt="alternative">
-                                </div> <!-- end of image-container -->
-                            </div> <!-- end of col -->
-                            <div class="col-lg-6 col-xl-5">
-                                <div class="text-container">
-                                    <div class="section-title">Netvoz</div>
-                                    <h2>Aplicación de comercio electrónico</h2>
-                                    <p>Netvoz es una aplicación de comercio electrónico orientada específicamente a las tiendas de barrio. Fue desarrollado para la empresa Innodrive S.A.S. Participé en el desarrollo de módulos y en el diseño de la aplicación.
-                                    </p>
-                                </div> <!-- end of text-container -->
-                            </div> <!-- end of col -->
-                        </div> <!-- end of row -->
-                    </div> <!-- end of container -->
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div id="details" class="basic-1">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 col-xl-7">
-                                <div class="image-container">
-                                    <img class="img-fluid" src="images/massy.png" alt="alternative">
-                                </div> <!-- end of image-container -->
-                            </div> <!-- end of col -->
-                            <div class="col-lg-6 col-xl-5">
-                                <div class="text-container">
-                                    <div class="section-title">Massy</div>
-                                    <h2>Aplicación para el envío de dinero</h2>
-                                    <p>Massy es una aplicación para el envío de dinero en las islas del caribe, fue desarrollado para la empresa ControlBox Corp. Participé en el desarrollo de módulos.
-                                    </p>
-                                </div> <!-- end of text-container -->
-                            </div> <!-- end of col -->
-                        </div> <!-- end of row -->
-                    </div> <!-- end of container -->
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
+    </section>
+    <!-- end of portfolio -->
 
 
-    <div id="services" class="cards-3 bg-gray ">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Experiencias en desarrollo web</h2>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-
-        </div>
-    </div>
-
-
-    <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div id="details" class="basic-1">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 col-xl-7">
-                                <div class="image-container">
-                                    <img class="img-fluid" src="images/fecurity_web.png" alt="alternative">
-                                </div> <!-- end of image-container -->
-                            </div> <!-- end of col -->
-                            <div class="col-lg-6 col-xl-5">
-                                <div class="text-container">
-                                    <div class="section-title">Fecurity Web</div>
-                                    <h2>Aplicación de seguimiento e inspección de tareas</h2>
-                                    <p>Aplicación web para llevar a cabo la inspección, registro y control de tareas de mantenimiento en parques y centros de entretenimiento familiar. 
-                                        Desarrollado para la empresa Innodrive S.A.S.
-                                        Participé en soporte y desarrollo de módulos. 
-                                    </p>
-                                </div> <!-- end of text-container -->
-                            </div> <!-- end of col -->
-                        </div> <!-- end of row -->
-                    </div> <!-- end of container -->
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div id="details" class="basic-1">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 col-xl-7">
-                                <div class="image-container">
-                                    <img class="img-fluid" src="images/Procesos_contables.png" alt="alternative">
-                                </div> <!-- end of image-container -->
-                            </div> <!-- end of col -->
-                            <div class="col-lg-6 col-xl-5">
-                                <div class="text-container">
-                                    <div class="section-title">Procesos Contables</div>
-                                    <h2>Aplicación de registro de contabilidad</h2>
-                                    <p>Aplicación web para llevar a cabo registros de contabilidad. 
-                                        Desarrollado para la empresa Innodrive S.A.S.
-                                        Participé en soporte y desarrollo de módulos. 
-                                    </p>
-                                </div> <!-- end of text-container -->
-                            </div> <!-- end of col -->
-                        </div> <!-- end of row -->
-                    </div> <!-- end of container -->
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div id="details" class="basic-1">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 col-xl-7">
-                                <div class="image-container">
-                                    <img class="img-fluid" src="images/control_redencion.png" alt="alternative">
-                                </div> <!-- end of image-container -->
-                            </div> <!-- end of col -->
-                            <div class="col-lg-6 col-xl-5">
-                                <div class="text-container">
-                                    <div class="section-title">Control Redención</div>
-                                    <h2>Aplicación de reconocimiento de saldos </h2>
-                                    <p>Aplicación web para llevar a cabo el reconocimiento de saldos de tarjetas en parques de diversiones. 
-                                        Desarrollado para la empresa Innodrive S.A.S.
-                                        Participé en soporte y desarrollo de módulos. 
-                                    </p>
-                                </div> <!-- end of text-container -->
-                            </div> <!-- end of col -->
-                        </div> <!-- end of row -->
-                    </div> <!-- end of container -->
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-
-      <!-- Customers -->
-      <div class="slider-1">
+      <section class="technologies-section" id="technologies">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <h4>Tecnologías <span class="blue">trabajadas</span></h4>
                     <hr class="section-divider">
-
-                    <!-- Image Slider -->
-                    <div class="slider-container">
-                        <div class="swiper-container image-slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img class="img-fluid" src="images/flutter.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img class="img-fluid" src="images/net.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img class="img-fluid" src="images/nodejs.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img class="img-fluid" src="images/sql.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img class="img-fluid" src="images/django.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img class="img-fluid" src="images/xamarin.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img class="img-fluid" src="images/jsp.png" alt="alternative">
-                                </div>
-                            </div> <!-- end of swiper-wrapper -->
-                        </div> <!-- end of swiper container -->
-                    </div> <!-- end of slider-container -->
-                    <!-- end of image slider -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of slider-1 -->
-    <!-- end of customers -->
+                    <div class="technologies-grid" id="technologiesGrid"></div>
+                </div>
+            </div>
+        </div>
+      </section>
 
     <!-- Details 2 -->
     <div  id="studies" class="basic-2">
@@ -482,13 +175,12 @@
                     <div class="text-container">
                         <div class="section-title">Mis estudios</div>
                         <h2>Ingeniero en Software</h2>
-                        <p>Soy egresado del Tecnológico de Antioquia como ingeniero en software, título que recibí en el año
-                            2022 con doble mención de honor por mejor promedio académico durante la carrera y reconocimiento por mi trabajo de grados 
-                            "Desarrollo de un prototipo web para el sistema de notas de la facultad de ingeniería del TdeA basada en una simulación de arquitectura Blockchain".
+                        <p>
+                            Me gradué en 2022 como Ingeniero en Software del Tecnológico de Antioquia (TdeA), con doble mención de honor por el mejor promedio académico de la promoción y reconocimiento por mi trabajo de grado:
+                            <em>Desarrollo de un prototipo web para el sistema de notas de la facultad de ingeniería del TdeA basado en una simulación de arquitectura Blockchain</em>.
                         </p>
                         <p>
-                            En mi vida universitaria, participé en diferentes movilidades tanto nacionales como internacionales, haciendo presencia en eventos de innovación e interculturalidad en países como México y Paraguay.
-                            También participé activamente en semilleros de investigación, llegando a participar en el XXII Encuentro Nacional y XVI internacional de Semilleros de Investigación RedCOLSI.
+                            Durante mi formación universitaria participé en movilidades académicas en México y Paraguay, en eventos de innovación e interculturalidad. También formé parte de semilleros de investigación y representé a la institución en el XXII Encuentro Nacional y XVI Encuentro Internacional de Semilleros de Investigación RedCOLSI.
                         </p>
           
                     </div> <!-- end of text-container -->
@@ -664,6 +356,8 @@
     <!-- Scripts -->
     <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
     <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="js/theme.js"></script> <!-- Dark mode -->
+    <script src="js/portfolio.js"></script> <!-- Services & portfolio -->
     <script src="js/scripts.js"></script> <!-- Custom scripts -->
 </body>
 
